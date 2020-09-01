@@ -22,7 +22,7 @@ void read_temp(float & temp) {
     fclose(temp_file);
     temp /= 1000.0f;
     #ifdef DEBUG
-        std::cout << temp << "C°" << std::endl;
+        std::cout << temp << "°C" << std::endl;
     #endif    
 }
 
