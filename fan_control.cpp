@@ -21,14 +21,18 @@ void read_temp(float & temp) {
     fscanf(temp_file, "%f", &temp);
     fclose(temp_file);
     temp /= 1000.0f;
-    // std::cout << temp << "C°" << std::endl;
+    #ifdef DEBUG
+        std::cout << temp << "C°" << std::endl;
+    #endif    
 }
 
 int get_fan_value(const float & temp) {
     if(temp > MAX_TEMP) return MAX_FAN;
     if(temp <= MIN_TEMP) return OFF_FAN;
     int value = MIN_FAN + (temp-MIN_TEMP) / (MAX_TEMP-MIN_TEMP) * (MAX_FAN-MIN_FAN);
-    // std::cout << value << "%" << std::endl;
+    #ifdef DEBUG
+        std::cout << value << "%" << std::endl;
+    #endif  
     return value;
 }
 
