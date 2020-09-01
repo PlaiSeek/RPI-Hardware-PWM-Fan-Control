@@ -1,0 +1,1 @@
+A Simple C++ program to control a PWM fan with Pi Hardware PWM (much more efficient than software PWM aka python one)
